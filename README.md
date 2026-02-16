@@ -1,16 +1,38 @@
-# React + Vite
+# Authify UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, secure authentication interface built with **React** and **Vite**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Secure Authentication**: Login, Signup, Email Verification, and Password Reset.
+- **Modern UI**: Glassmorphism design with Tailwind CSS and Bootstrap.
+- **Responsive**: Fully responsive layout for all devices.
+- **State Management**: React Context API for global state.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React, Vite
+- **Styling**: Tailwind CSS, Bootstrap 5
+- **HTTP Client**: Axios
+- **Notifications**: React Toastify
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.  **Clone the repository**
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Configure Environment**:
+    - Copy `.env.example` to `.env`
+    - Update `VITE_BACKEND_URL` with your backend API URL.
+4.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
+
+## Scripts
+
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run lint`: Lint code

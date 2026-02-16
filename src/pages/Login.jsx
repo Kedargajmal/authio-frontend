@@ -78,7 +78,7 @@ const Login = () => {
                 zIndex: 0,
                 pointerEvents: 'none',
                 // Apply the new pulse animation
-                animation: 'pulse-out 8s ease-in-out infinite' 
+                animation: 'pulse-out 8s ease-in-out infinite'
             }}></div>
 
             <div style={{
@@ -123,7 +123,7 @@ const Login = () => {
                             <input
                                 type='text'
                                 className='form-control bg-dark text-white border-secondary border-opacity-50'
-                                style={{ backgroundColor: '#111 !important' }}
+                                style={{ backgroundColor: '#111' }}
                                 placeholder='Enter your username'
                                 required
                                 onChange={(e) => setName(e.target.value)}

@@ -3,17 +3,17 @@ import { AppContext } from '../context/AppContext.jsx'
 import assets from '../assets/assets'
 
 const Header = () => {
-    const {userData} = useContext(AppContext);
+    const { userData } = useContext(AppContext);
 
     return (
-        <div 
-            className='text-center d-flex flex-column align-items-center justify-content-center px-3 w-100' 
+        <div
+            className='text-center d-flex flex-column align-items-center justify-content-center px-3 w-100'
             style={{
                 minHeight: "100vh", // Changed to 100vh for full page height
-                backgroundColor: '#000', 
-                color: '#fff',           
-                position: 'relative',    
-                overflow: 'hidden'       
+                backgroundColor: '#000',
+                color: '#fff',
+                position: 'relative',
+                overflow: 'hidden'
             }}
         >
             {/* --- ANIMATION KEYFRAMES --- */}
@@ -38,7 +38,7 @@ const Header = () => {
             </style>
 
             {/* --- 4 LAYERED GLOW CIRCLES --- */}
-            
+
             <div style={{
                 position: 'absolute', top: '50%', left: '50%',
                 width: '700px', height: '600px',
@@ -79,14 +79,14 @@ const Header = () => {
                 <h5 className='fw-semibold'>
                     Hey {userData ? userData.name : "Developer"} <span role='img' aria-label='wave'>✋</span>
                 </h5>
-                
+
                 {/* Fixed Gradient Visibility */}
-                <h1 className='fw-bold display-5 mb-3 bg-linear-to-b from-green-300 to-green-700 bg-clip-text text-transparent' 
+                <h1 className='fw-bold display-5 mb-3 bg-gradient-to-b from-green-300 to-green-700 bg-clip-text text-transparent'
                     style={{ WebkitBackgroundClip: 'text', filter: 'drop-shadow(0 0 20px rgba(34, 197, 94, 0.4))' }}>
                     Welcome to our Product
                 </h1>
-                
-                <p className='mb-4' style={{maxWidth: "500px", color: '#a1a1aa'}}>
+
+                <p className='mb-4' style={{ maxWidth: "500px", color: '#a1a1aa' }}>
                     Let's start with a quick product tour and you can setup the authentication in no time!
                 </p>
 
