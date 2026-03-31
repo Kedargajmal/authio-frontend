@@ -95,7 +95,6 @@ const ResetPassword = () => {
         <div className='d-flex align-items-center justify-content-center vh-100 position-relative overflow-hidden'
             style={{ backgroundColor: "#000", color: "#fff" }}>
 
-            {/* --- PULSING BACKGROUND GLOWS --- */}
             <style>
                 {`
                 @keyframes pulse-center {
@@ -114,13 +113,11 @@ const ResetPassword = () => {
                 animation: 'pulse-center 8s ease-in-out infinite'
             }}></div>
 
-            {/* Navigation Logo */}
             <Link to="/" className="position-absolute top-0 start-0 p-4 d-flex align-items-center gap-2 text-decoration-none">
                 <img src={assets.mark} alt="logo" height={32} width={32} style={{ filter: 'brightness(0) invert(1)' }} />
                 <span className='fs-4 fw-bold text-white'>Authio</span>
             </Link>
 
-            {/* --- RESET EMAIL FORM --- */}
             {!isEmailSent && (
                 <div className="p-5 text-center border border-secondary border-opacity-25"
                     style={{ width: "100%", maxWidth: '400px', backgroundColor: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(15px)', borderRadius: '16px', zIndex: 1 }}>
@@ -149,7 +146,6 @@ const ResetPassword = () => {
                 </div>
             )}
 
-            {/* --- OTP VERIFICATION CARD --- */}
             {!isOtpSubmitted && isEmailSent && (
                 <div className='p-5 rounded-4 border border-secondary border-opacity-25 text-center'
                     style={{ width: "400px", backgroundColor: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(15px)', zIndex: 1 }}>
@@ -177,7 +173,6 @@ const ResetPassword = () => {
                 </div>
             )}
 
-            {/* --- NEW PASSWORD FORM --- */}
             {isOtpSubmitted && isEmailSent && (
                 <div className="p-5 text-center border border-secondary border-opacity-25"
                     style={{ width: "100%", maxWidth: '400px', backgroundColor: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(15px)', borderRadius: '16px', zIndex: 1 }}>

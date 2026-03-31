@@ -54,12 +54,11 @@ const Menubar = () => {
   }
 
   return (
-    // Set to absolute or fixed and transparent so glows show behind it
     <div style={{ position: 'absolute', width: '100%', top: 0, left: 0, zIndex: 50, }}>
       <nav className='navbar px-5 py-4 flex justify-between items-center'
         style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.1)', // Subtle transparency
-          backdropFilter: 'blur(10px)',         // Blurs the background glows slightly
+          backgroundColor: 'rgba(0, 0, 0, 0.1)', 
+          backdropFilter: 'blur(10px)',         
           borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
         }}>
 
@@ -91,7 +90,7 @@ const Menubar = () => {
                   top: "50px",
                   right: 0,
                   zIndex: 100,
-                  backgroundColor: 'rgba(17, 17, 17, 0.9)', // Semi-transparent dropdown
+                  backgroundColor: 'rgba(17, 17, 17, 0.9)', 
                   backdropFilter: 'blur(5px)',
                   border: '1px solid #333'
                 }}>

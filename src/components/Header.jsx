@@ -9,14 +9,13 @@ const Header = () => {
         <div
             className='text-center d-flex flex-column align-items-center justify-content-center px-3 w-100'
             style={{
-                minHeight: "100vh", // Changed to 100vh for full page height
+                minHeight: "100vh",
                 backgroundColor: '#000',
                 color: '#fff',
                 position: 'relative',
                 overflow: 'hidden'
             }}
         >
-            {/* --- ANIMATION KEYFRAMES --- */}
             <style>
                 {`
                 @keyframes float-1 {
@@ -36,8 +35,6 @@ const Header = () => {
                 }
                 `}
             </style>
-
-            {/* --- 4 LAYERED GLOW CIRCLES --- */}
 
             <div style={{
                 position: 'absolute', top: '50%', left: '50%',
@@ -71,7 +68,6 @@ const Header = () => {
                 animation: 'float-1 18s ease-in-out infinite'
             }}></div>
 
-            {/* Content Wrapper - Removed h-full to prevent top-clamping */}
             <div style={{ position: 'relative', zIndex: 1 }} className='d-flex flex-column align-items-center'>
 
                 <img src={assets.header} alt="header" width={300} className='mb-1 drop-shadow-2xl contrast-130 brightness-90' />
@@ -80,7 +76,6 @@ const Header = () => {
                     Hey {userData ? userData.name : "Developer"} <span role='img' aria-label='wave'>✋</span>
                 </h5>
 
-                {/* Fixed Gradient Visibility */}
                 <h1 className='fw-bold display-5 mb-3 bg-gradient-to-b from-green-300 to-green-700 bg-clip-text text-transparent'
                     style={{ WebkitBackgroundClip: 'text', filter: 'drop-shadow(0 0 20px rgba(34, 197, 94, 0.4))' }}>
                     Welcome to our Product

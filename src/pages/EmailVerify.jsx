@@ -68,7 +68,6 @@ const EmailVerify = () => {
         <div className='d-flex align-items-center justify-content-center vh-100 position-relative overflow-hidden'
             style={{ backgroundColor: "#000", color: "#fff" }}>
 
-            {/* --- PULSING OUTWARD GLOWS --- */}
             <style>
                 {`
                 @keyframes pulse-outward {
@@ -79,7 +78,6 @@ const EmailVerify = () => {
                 `}
             </style>
 
-            {/* Circle 1: Center */}
             <div style={{
                 position: 'absolute', top: '50%', left: '50%',
                 width: '600px', height: '600px',
@@ -88,7 +86,6 @@ const EmailVerify = () => {
                 animation: 'pulse-outward 8s ease-in-out infinite'
             }}></div>
 
-            {/* Circle 2: Top Right */}
             <div style={{
                 position: 'absolute', top: '20%', left: '80%',
                 width: '400px', height: '400px',
@@ -97,7 +94,6 @@ const EmailVerify = () => {
                 animation: 'pulse-outward 10s ease-in-out infinite 2s'
             }}></div>
 
-            {/* Circle 3: Bottom Left */}
             <div style={{
                 position: 'absolute', bottom: '10%', left: '10%',
                 width: '500px', height: '500px',
@@ -106,13 +102,11 @@ const EmailVerify = () => {
                 animation: 'pulse-outward 12s ease-in-out infinite 4s'
             }}></div>
 
-            {/* Navigation Logo */}
             <Link to="/" className="position-absolute top-0 start-0 p-4 d-flex align-items-center gap-2 text-decoration-none">
                 <img src={assets.mark} alt="logo" height={32} width={32} style={{ filter: 'brightness(0) invert(1)' }} />
                 <span className='fs-4 fw-bold text-white'>Authio</span>
             </Link>
 
-            {/* --- OTP CARD (GLASSMORPHISM) --- */}
             <div className='p-5 border border-secondary border-opacity-25'
                 style={{
                     width: "100%",

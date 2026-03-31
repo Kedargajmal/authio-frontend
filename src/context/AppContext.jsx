@@ -12,7 +12,6 @@ export const AppContextProvider = (props) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userData, setUserData] = useState(false);
 
-    // Function to fetch user data from backend
     const getUserData = useCallback(async () => {
         try {
             const res = await axios.get(`${backendURL}/profile`);
@@ -23,12 +22,10 @@ export const AppContextProvider = (props) => {
                 toast.error("Unable to fetch user data");
             }
         } catch (error) {
-            // Only show error if the user is actually supposed to be logged in
             toast.error("Error fetching user data. Please try again.", error.message);
         }
     }, [backendURL]);
 
-    // Function to check authentication state from backend
     const getAuthState = useCallback(async () => {
         try {
             const res = await axios.get(backendURL + "/is-authenticated");
@@ -37,26 +34,25 @@ export const AppContextProvider = (props) => {
                 await getUserData();
             }
         }
-        catch (error) {
-            if (error.response) {
-                const msg = error.response.data?.message || "Error checking authentication state. Please try again.";
-                toast.error(msg);
-            }
-            else {
-                toast.error("Error 1", error.message);
-            }
+        catch {
+            // Hide CORS and auth errors on page load when the user is simply not logged in
+            // if (error.response) {
+            //     const msg = error.response.data?.message || "Error checking authentication state. Please try again.";
+            //     toast.error(msg);
+            // }
+            // else {
+            //     toast.error("Error 1", error.message);
+            // }
             setIsLoggedIn(false);
             //setUserData(false);
         }
     }, [backendURL, getUserData]);
 
-    // On component mount, check authentication state
     useEffect(() => {
         // eslint-disable-next-line
         getAuthState();
     }, [getAuthState]);
 
-    // Provide context values to children components
     const contextValue = {
         backendURL,
         isLoggedIn, setIsLoggedIn,

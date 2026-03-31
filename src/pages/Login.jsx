@@ -47,7 +47,6 @@ const Login = () => {
         <div className='position-relative min-vh-100 d-flex justify-content-center align-items-center overflow-hidden'
             style={{ backgroundColor: "#000", color: "#fff" }}>
 
-            {/* --- MOVING BACKGROUND GLOWS --- */}
             <style>
                 {`
                 @keyframes pulse-out {
@@ -77,7 +76,6 @@ const Login = () => {
                 filter: 'blur(100px)',
                 zIndex: 0,
                 pointerEvents: 'none',
-                // Apply the new pulse animation
                 animation: 'pulse-out 8s ease-in-out infinite'
             }}></div>
 
@@ -89,7 +87,6 @@ const Login = () => {
                 animation: 'float-login-1 12s ease-in-out infinite reverse'
             }}></div>
 
-            {/* --- LOGO SECTION --- */}
             <div style={{ position: "absolute", top: "20px", left: "30px" }}>
                 <Link to="/" className="text-decoration-none d-flex align-items-center gap-2">
                     <img src={assets.mark} alt="logo" height={32} width={32} style={{ filter: 'brightness(0) invert(1)' }} />
@@ -97,7 +94,6 @@ const Login = () => {
                 </Link>
             </div>
 
-            {/* --- LOGIN CARD (GLASSMORPHISM) --- */}
             <div className='p-4 border border-secondary border-opacity-25'
                 style={{
                     maxWidth: "400px",
