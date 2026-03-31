@@ -34,17 +34,17 @@ export const AppContextProvider = (props) => {
                 await getUserData();
             }
         }
-        catch {
+        catch (error) {
             // Hide CORS and auth errors on page load when the user is simply not logged in
-            // if (error.response) {
-            //     const msg = error.response.data?.message || "Error checking authentication state. Please try again.";
-            //     toast.error(msg);
-            // }
-            // else {
-            //     toast.error("Error 1", error.message);
-            // }
+            if (error.response) {
+                const msg = error.response.data?.message || "Error checking authentication state. Please try again.";
+                toast.error(msg);
+            }
+            else {
+                toast.error("Error 1", error.message);
+            }
             setIsLoggedIn(false);
-            //setUserData(false);
+            setUserData(false);
         }
     }, [backendURL, getUserData]);
 
