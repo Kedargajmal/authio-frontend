@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://authio-app-production.up.railway.app',
+        target: 'https://authio-app.onrender.com',
         changeOrigin: true,
       }
     }
