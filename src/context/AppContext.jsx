@@ -24,7 +24,12 @@ export const AppContextProvider = (props) => {
                 toast.error("Unable to fetch user data");
             }
         } catch (error) {
-            toast.error("Error fetching user data. Please try again.", error.message);
+            if (error.response && error.response.status === 401) {
+                setIsLoggedIn(false);
+                setUserData(false);
+            } else {
+                toast.error("Error fetching user data. Please try again.");
+            }
         }
     }, [backendURL]);
 
@@ -41,6 +46,11 @@ export const AppContextProvider = (props) => {
             }
         }
         catch (error) {
+            if (error.response && error.response.status === 401) {
+                setIsLoggedIn(false);
+                setUserData(false);
+                return;
+            }
             if (error.response) {
                 const msg = error.response.data?.message || "Error checking authentication state. Please try again.";
                 toast.error(msg);
@@ -56,7 +66,7 @@ export const AppContextProvider = (props) => {
     useEffect(() => {
         // eslint-disable-next-line
         getAuthState();
-    }, []);
+    }, [getAuthState]);
 
     const contextValue = {
         backendURL,
