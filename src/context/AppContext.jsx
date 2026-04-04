@@ -8,6 +8,8 @@ export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
 
+    //axios.defaults.withCredentials = true;
+
     const backendURL = AppConstants.BACKEND_URL;
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userData, setUserData] = useState(false);
@@ -33,9 +35,12 @@ export const AppContextProvider = (props) => {
                 setIsLoggedIn(true);
                 await getUserData();
             }
+            else {
+                setIsLoggedIn(false);
+                //setUserData(false);
+            }
         }
         catch (error) {
-            // Hide CORS and auth errors on page load when the user is simply not logged in
             if (error.response) {
                 const msg = error.response.data?.message || "Error checking authentication state. Please try again.";
                 toast.error(msg);
@@ -51,7 +56,7 @@ export const AppContextProvider = (props) => {
     useEffect(() => {
         // eslint-disable-next-line
         getAuthState();
-    }, [getAuthState]);
+    }, []);
 
     const contextValue = {
         backendURL,
