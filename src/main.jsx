@@ -7,9 +7,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import App from './App.jsx'
 import { AppContextProvider } from './context/AppContext.jsx';
-import axios from 'axios'
 
-axios.defaults.withCredentials = true;
+
+//axios.defaults.withCredentials = true;
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
